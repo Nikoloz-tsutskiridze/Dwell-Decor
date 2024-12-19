@@ -1,3 +1,5 @@
+"use server";
+
 import db from "@/utils/db";
 import { redirect } from "next/navigation";
 
@@ -10,8 +12,8 @@ export async function fetchFeaturedProducts() {
   return products;
 }
 
-export function fetchAllProducts({ search = "" }: { search: string }) {
-  return db.product.findMany({
+export async function fetchAllProducts({ search = "" }: { search: string }) {
+  return await db.product.findMany({
     where: {
       OR: [
         { name: { contains: search, mode: "insensitive" } },
@@ -35,4 +37,11 @@ export const fetchSingleProduct = async (productId: string) => {
     redirect("/products");
   }
   return product;
+};
+
+export const createProductAction = async (
+  prevState: unknown,
+  formData: FormData
+): Promise<{ message: string }> => {
+  return { message: "product created" };
 };
