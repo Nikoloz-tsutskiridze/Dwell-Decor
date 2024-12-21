@@ -1,5 +1,4 @@
 "use client";
-
 import { useState } from "react";
 import Image from "next/image";
 import { Button } from "../ui/button";
@@ -43,7 +42,7 @@ function ImageInputContainer(props: ImageInputContainerProps) {
           <FormContainer action={action}>
             {props.children}
             <ImageInput />
-            <SubmitButton size="sm" />
+            <SubmitButton size="sm" text={text} />
           </FormContainer>
         </div>
       )}
