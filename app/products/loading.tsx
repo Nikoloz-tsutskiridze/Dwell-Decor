@@ -1,6 +1,6 @@
 "use client";
 
-import LoadingContainer from "@/components/global/LoadingContainer";
+import LoadingContainer from "@/components/form/global/LoadingContainer";
 
 function loading() {
   return <LoadingContainer />;

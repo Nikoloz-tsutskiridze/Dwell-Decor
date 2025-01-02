@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar/Navbar";
-import Containter from "@/components/global/Containter";
+import Containter from "@/components/form/global/Containter";
 import Providers from "./providers";
 import { ClerkProvider } from "@clerk/nextjs";
 

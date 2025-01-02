@@ -33,15 +33,12 @@ const renderError = (error: unknown): { message: string } => {
 };
 
 export const fetchFeaturedProducts = async () => {
-  try {
-    const products = await db.product.findMany({
-      where: { featured: true },
-    });
-    return products;
-  } catch (error) {
-    console.error("Error fetching featured products:", error);
-    throw error;
-  }
+  const products = await db.product.findMany({
+    where: {
+      featured: true,
+    },
+  });
+  return products;
 };
 
 export async function fetchAllProducts({ search = "" }: { search: string }) {
@@ -272,7 +269,19 @@ export const createReviewAction = async (
     return renderError(error);
   }
 };
-export const fetchProductReviews = async () => {};
+
+export const fetchProductReviews = async (productId: string) => {
+  const reviews = await db.review.findMany({
+    where: {
+      productId,
+    },
+    orderBy: {
+      createdAt: "desc",
+    },
+  });
+  return reviews;
+};
+
 export const fetchProductReviewsByUser = async () => {};
 export const deleteReviewAction = async () => {};
 export const findExistingReview = async () => {};

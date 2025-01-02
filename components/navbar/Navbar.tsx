@@ -1,5 +1,5 @@
 import React, { Suspense } from "react";
-import Containter from "../global/Containter";
+import Containter from "../form/global/Containter";
 import Logo from "./Logo";
 import NavSearch from "./NavSearch";
 import CartButton from "./CartButton";
