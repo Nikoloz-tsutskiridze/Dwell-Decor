@@ -2,9 +2,10 @@ import React from "react";
 import { Button } from "../ui/button";
 import Link from "next/link";
 import { LucideShoppingCart } from "lucide-react";
+import { fetchCartItems } from "@/utils/actions";
 
-function CartButton() {
-  const itemsCart = 9;
+async function CartButton() {
+  const itemsCart = await fetchCartItems();
 
   return (
     <Button
@@ -24,4 +25,3 @@ function CartButton() {
 }
 
 export default CartButton;
-
