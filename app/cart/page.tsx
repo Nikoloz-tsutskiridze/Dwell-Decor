@@ -8,6 +8,7 @@ import { redirect } from "next/navigation";
 async function CartPage() {
   const { userId } = await auth();
   if (!userId) redirect("/");
+
   const cart = await fetchOrCreateCart({ userId });
   await updateCart(cart);
 
