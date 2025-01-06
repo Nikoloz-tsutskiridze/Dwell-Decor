@@ -7,16 +7,16 @@ import { SubmitButton } from "@/components/form/Buttons";
 import CheckboxInput from "@/components/form/CheckboxInput";
 
 async function EditProductPage({ params }: { params: { id: string } }) {
-  const { id } = params;
-  const product = await fetchAdminProductDetails(id);
+  const product = await fetchAdminProductDetails(params.id); // Access params.id directly
   const { name, company, description, featured, price } = product;
+
   return (
     <section>
       <h1 className="text-2xl font-semibold mb-8 capitalize">update product</h1>
       <div className="border p-8 rounded-md">
         <FormContainer action={updateProductAction}>
           <div className="grid gap-4 md:grid-cols-2 my-4">
-            <input type="hidden" name="id" value={id} />
+            <input type="hidden" name="id" value={params.id} />
             <FormInput
               type="text"
               name="name"
@@ -29,7 +29,6 @@ async function EditProductPage({ params }: { params: { id: string } }) {
               label="company"
               defaultValue={company}
             />
-
             <PriceInput defaultValue={price} />
           </div>
           <TextAreaInput
@@ -50,4 +49,5 @@ async function EditProductPage({ params }: { params: { id: string } }) {
     </section>
   );
 }
+
 export default EditProductPage;
