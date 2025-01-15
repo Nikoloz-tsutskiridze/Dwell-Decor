@@ -6,7 +6,11 @@ import TextAreaInput from "@/components/form/TextAreaInput";
 import { SubmitButton } from "@/components/form/Buttons";
 import CheckboxInput from "@/components/form/CheckBoxInput";
 
-async function EditProductPage({ params }: { params: { id: string } }) {
+interface PageProps {
+  params: { id: string };
+}
+
+async function EditProductPage({ params }: PageProps) {
   const product = await fetchAdminProductDetails(params.id); // Access params.id directly
   const { name, company, description, featured, price } = product;
 
