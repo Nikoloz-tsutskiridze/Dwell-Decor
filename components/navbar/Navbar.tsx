@@ -10,16 +10,18 @@ function Navbar() {
   return (
     <div className="border-b">
       <Containter className=" flex flex-col sm:flex-row sm:justify-between sm:items-center flex-wrap py-8 gap-4">
-        <Logo />
+        <div className="grid grid-cols-2 sm:items-center">
+          <Logo />
 
-        <Suspense>
-          <NavSearch />
-        </Suspense>
+          <Suspense>
+            <NavSearch />
+          </Suspense>
+        </div>
 
-        <div className="flex gap-4 items-center">
+        <div className="flex gap-3 items-center">
+          <LinksDropdown />
           <CartButton />
           <DarkMode />
-          <LinksDropdown />
         </div>
       </Containter>
     </div>

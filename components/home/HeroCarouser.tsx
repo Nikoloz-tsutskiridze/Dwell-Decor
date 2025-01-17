@@ -23,11 +23,11 @@ function HeroCarouser() {
           return (
             <CarouselItem key={index}>
               <Card>
-                <CardContent className="p-2">
+                <CardContent className="p-1">
                   <Image
                     src={image}
                     alt="hero"
-                    className="w-full h-[24rem] object-cover"
+                    className="w-full h-[24rem] object-cover rounded-sm"
                   />
                 </CardContent>
               </Card>
@@ -35,8 +35,8 @@ function HeroCarouser() {
           );
         })}
       </CarouselContent>
-      <CarouselPrevious />
-      <CarouselNext />
+      <CarouselPrevious className="left-[-15px]" />
+      <CarouselNext className="right-[-15px]" />
     </Carousel>
   );
 }

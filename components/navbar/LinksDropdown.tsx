@@ -22,8 +22,8 @@ export default async function LinksDropdown() {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="outline" className="flex gap-4 max-w-[100px]">
-          <LuAlignLeft />
           <UserIcon />
+          <LuAlignLeft />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-20" align="start" sideOffset={10}>
